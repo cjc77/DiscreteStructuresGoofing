@@ -10,7 +10,7 @@ def run_experiment(exp_number):
     all_chests = [['G', 'G'], ['G', 'S'], ['S', 'S']]
 
     # Important data
-    gold_first_count = silver_second_count = gold_second_count = 0
+    gold_first_count = gold_second_count = 0
 
     # Run n experiments
     for trial in range(exp_number):
@@ -20,6 +20,7 @@ def run_experiment(exp_number):
 
         # choose your first coin
         coin1 = chest_chosen[drawer_1]
+
         # Need we continue?
         if coin1 == 'G':
             gold_first_count += 1
@@ -28,8 +29,7 @@ def run_experiment(exp_number):
             coin2 = chest_chosen[drawer_2]
             if coin2 == 'G':
                 gold_second_count += 1
-            elif coin2 == 'S':
-                silver_second_count += 1
+
 
     gold_given_gold = gold_second_count / gold_first_count
     return gold_given_gold
