@@ -13,7 +13,7 @@ result: 1 repetition
 """
 
 
-def pal_num_gen(num, count):
+def one_ninety_six(num, count):
     """
     Check  how many steps of num + rev_num must be taken
     to produce a palindrome
@@ -31,7 +31,7 @@ def pal_num_gen(num, count):
         # [::-1] => python trick to reverse a string
         rev_and_sum = int(num_str) + int(num_str[::-1])
         print(num_str, '+', num_str[::-1])
-        return pal_num_gen(rev_and_sum, count + 1)
+        return one_ninety_six(rev_and_sum, count + 1)
 
 def check_pal(str_num, idx1, idx2):
 
@@ -53,7 +53,7 @@ def check_pal(str_num, idx1, idx2):
 
 def main():
     num = int(input("Enter: "))
-    res = pal_num_gen(num, 0)
+    res = one_ninety_six(num, 0)
     print(res)
 
 
