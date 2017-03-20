@@ -30,6 +30,7 @@ def pal_num_gen(num, count):
     if not check_pal(num_str, 0, len(num_str) - 1):
         # [::-1] => python trick to reverse a string
         rev_and_sum = int(num_str) + int(num_str[::-1])
+        print(num_str, '+', num_str[::-1])
         return pal_num_gen(rev_and_sum, count + 1)
 
 def check_pal(str_num, idx1, idx2):
