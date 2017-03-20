@@ -22,7 +22,7 @@ def pal_num_gen(num, count):
     num_str = str(num)
     print(num)
 
-    # if rev_and_sum is palindrome
+    # if current number is palindrome
     if check_pal(num_str, 0, len(num_str) - 1):
         return count
 
