@@ -1,4 +1,5 @@
 """
+Process: Game called "reverse and add". Are there any Lychrel Numbers?
 User inputs a number. Program counts number of times:
 
 num + reverse_num = num_1
@@ -10,7 +11,13 @@ must be performed before num_n is a palindrome.
 Ex:
 23 + 32 = 55
 result: 1 repetition
+
+Interesting cases 89, 196
 """
+
+
+NONE = 0
+
 
 
 def one_ninety_six(num, count):
@@ -22,16 +29,20 @@ def one_ninety_six(num, count):
     num_str = str(num)
     print(num)
 
+    # Check the number
+    pal = check_pal(num_str, 0, len(num_str) - 1)
+
     # if current number is palindrome
-    if check_pal(num_str, 0, len(num_str) - 1):
+    if pal:
         return count
 
     # if not palindrome
-    if not check_pal(num_str, 0, len(num_str) - 1):
+    if not pal:
         # [::-1] => python trick to reverse a string
         rev_and_sum = int(num_str) + int(num_str[::-1])
         print(num_str, '+', num_str[::-1])
         return one_ninety_six(rev_and_sum, count + 1)
+
 
 def check_pal(str_num, idx1, idx2):
 
@@ -53,8 +64,8 @@ def check_pal(str_num, idx1, idx2):
 
 def main():
     num = int(input("Enter: "))
-    res = one_ninety_six(num, 0)
-    print(res)
+    res = one_ninety_six(num, NONE)
+    print(res, "repetition(s)", sep=' ')
 
 
 if __name__ == '__main__':
